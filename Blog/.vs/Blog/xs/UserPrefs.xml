@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{BBA0D003-79DA-4ED8-843B-16A1858A4F09}|https">
+  <MonoDevelop.Ide.ItemProperties.Infrastructure.Blog.Persistance FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Presentation.Blog.Presentation FirstBuild="True" PreferredExecutionTarget="/Applications/Brave Browser.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Blog" expanded="True">
+            <Node name="Presentation" expanded="True">
+              <Node name="Blog.Presentation" expanded="True" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Core.Blog.Domain FirstBuild="True" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Infrastructure.Blog.Infrastructure FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Core.Blog.Application FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+</Properties>
