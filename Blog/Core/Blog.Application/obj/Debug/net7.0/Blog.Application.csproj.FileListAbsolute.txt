@@ -1,0 +1,17 @@
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Core/Blog.Application/bin/Debug/net7.0/Blog.Application.deps.json
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Core/Blog.Application/bin/Debug/net7.0/Blog.Application.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Core/Blog.Application/bin/Debug/net7.0/Blog.Application.pdb
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Core/Blog.Application/obj/Debug/net7.0/Blog.Application.csproj.AssemblyReference.cache
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Core/Blog.Application/obj/Debug/net7.0/Blog.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Core/Blog.Application/obj/Debug/net7.0/Blog.Application.AssemblyInfoInputs.cache
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Core/Blog.Application/obj/Debug/net7.0/Blog.Application.AssemblyInfo.cs
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Core/Blog.Application/obj/Debug/net7.0/Blog.Application.csproj.CoreCompileInputs.cache
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Core/Blog.Application/obj/Debug/net7.0/Blog.Application.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Core/Blog.Application/obj/Debug/net7.0/refint/Blog.Application.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Core/Blog.Application/obj/Debug/net7.0/Blog.Application.pdb
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Core/Blog.Application/obj/Debug/net7.0/ref/Blog.Application.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Core/Blog.Application/bin/Debug/net7.0/Blog.Application.runtimeconfig.json
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Core/Blog.Application/bin/Debug/net7.0/Blog.Domain.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Core/Blog.Application/bin/Debug/net7.0/Blog.Domain.pdb
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Core/Blog.Application/obj/Debug/net7.0/Blog.Application.csproj.CopyComplete
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Core/Blog.Application/obj/Debug/net7.0/Blog.Application.genruntimeconfig.cache

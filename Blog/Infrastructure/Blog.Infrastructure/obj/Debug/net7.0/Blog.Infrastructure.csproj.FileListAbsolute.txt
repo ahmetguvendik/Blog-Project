@@ -1,0 +1,12 @@
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Infrastructure/Blog.Infrastructure/bin/Debug/net7.0/Blog.Infrastructure.deps.json
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Infrastructure/Blog.Infrastructure/bin/Debug/net7.0/Blog.Infrastructure.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Infrastructure/Blog.Infrastructure/bin/Debug/net7.0/Blog.Infrastructure.pdb
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Infrastructure/Blog.Infrastructure/obj/Debug/net7.0/Blog.Infrastructure.csproj.AssemblyReference.cache
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Infrastructure/Blog.Infrastructure/obj/Debug/net7.0/Blog.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Infrastructure/Blog.Infrastructure/obj/Debug/net7.0/Blog.Infrastructure.AssemblyInfoInputs.cache
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Infrastructure/Blog.Infrastructure/obj/Debug/net7.0/Blog.Infrastructure.AssemblyInfo.cs
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Infrastructure/Blog.Infrastructure/obj/Debug/net7.0/Blog.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Infrastructure/Blog.Infrastructure/obj/Debug/net7.0/Blog.Infrastructure.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Infrastructure/Blog.Infrastructure/obj/Debug/net7.0/refint/Blog.Infrastructure.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Infrastructure/Blog.Infrastructure/obj/Debug/net7.0/Blog.Infrastructure.pdb
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Infrastructure/Blog.Infrastructure/obj/Debug/net7.0/ref/Blog.Infrastructure.dll
