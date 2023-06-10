@@ -1,0 +1,46 @@
+﻿@using Blog.Application.Features.Commands.User.CreateUser
+@model CreateUserCommandResponse
+
+<form asp-action="CreateUser" asp-controller="User" method="post">
+
+    <div>
+        <label>Email Giriniz</label>
+        <input type="text" asp-for=@Model.Email />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Kullanici Adi Giriniz</label>
+        <input type="text" asp-for=@Model.UserName />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Sifre Giriniz</label>
+        <input type="password" asp-for=@Model.Password />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Sifreyi Tekrar Giriniz</label>
+        <input type="password" asp-for=@Model.PasswordConfirm />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Telefon Numarasi Giriniz</label>
+        <input type="number" asp-for=@Model.PhoneNumber />
+    </div>
+
+    <br />
+
+    <div>
+        <button>
+            Save
+        </button>
+    </div>
+</form>

@@ -6,7 +6,7 @@ namespace Blog.Application.Repositories
 		Task AddBlogAsync(T model);
 		Task UpdateBlogAsync(T model);
 		bool Remove(T model);
-		Task<bool> RemoveAsync(int id);
+		Task<bool> RemoveAsync(string id);
 		Task SaveAsync();
 	}
 }

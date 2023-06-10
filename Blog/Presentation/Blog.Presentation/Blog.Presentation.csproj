@@ -13,4 +13,12 @@
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Blog\" />
+    <None Remove="Views\User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Blog\" />
+    <Folder Include="Views\User\" />
+  </ItemGroup>
 </Project>

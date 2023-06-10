@@ -1,10 +1,10 @@
 ﻿using System;
 namespace Blog.Application.Repositories
 {
-	public interface IReadRepository<T> :IRepository<T> where T : Blog.Domain.Entities.Blog
+	public interface IReadRepository<T> :IRepository<T> where T: Blog.Domain.Entities.Blog
     {
-		IQueryable<T> GetAll();
-        Task<T> GetById(int id);
+		Task<IQueryable<T>> GetAll();
+        Task<T> GetById(string id);
     }
 }
 

@@ -1,10 +1,13 @@
 ﻿using Blog.Persistance;
+using Blog.Application;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddPersistanceService();
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Blog.Application.ServiceRegistration).GetTypeInfo().Assembly));
 
 var app = builder.Build();
 
@@ -20,6 +23,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

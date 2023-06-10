@@ -1,0 +1,25 @@
+﻿@using Blog.Application.Features.Commands.Blog.CreateBlog
+@model CreateBlogCommandRequest 
+
+<form asp-action="CreateBlog" asp-controller="Blog" method="post">
+
+    <div>
+        <label>Title</label>
+        <input type="text" asp-for=@Model.Title />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Description</label>
+        <input type="text" asp-for=@Model.Description />
+    </div>
+
+    <br />
+
+    <div>
+        <button>
+            Save
+        </button>
+    </div>
+</form>

@@ -15,12 +15,12 @@ namespace Blog.Persistance.Repositories
 
         public DbSet<T> Table => _context.Set<T>();
 
-        public IQueryable<T> GetAll()
+        public async Task<IQueryable<T>> GetAll()
         {
             return Table;
         }
 
-        public async Task<T> GetById(int id)
+        public async Task<T> GetById(string id)
         {
             return await Table.FirstOrDefaultAsync(x => x.Id == id);
         }
