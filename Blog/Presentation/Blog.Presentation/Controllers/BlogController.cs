@@ -25,18 +25,21 @@ namespace Blog.Presentation.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult GetBlog()
         {
            var blogs = _readRepository.GetAll();
            return View(blogs);
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult CreateBlog()
         {
             return View();
         }
           
         [HttpPost]
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> CreateBlog(VM_Blog_Create model)
         {
             var blog = new Domain.Entities.Blog();
@@ -49,6 +52,7 @@ namespace Blog.Presentation.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateBlog(string id)
         {
             if(id == null)
@@ -74,7 +78,7 @@ namespace Blog.Presentation.Controllers
             return RedirectToAction("GetBlog", "Blog");
         }
 
-    
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> RemoveBlog(string id)
         {
             await _writeRepository.RemoveAsync(id);

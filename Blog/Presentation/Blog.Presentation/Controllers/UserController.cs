@@ -19,12 +19,14 @@ namespace Blog.Presentation.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly RoleManager<AppRole> _roleManager;
         private readonly ITokenHandler _handler;
-        public UserController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenHandler handler)
+        public UserController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenHandler handler,RoleManager<AppRole> roleManager)
         {
             _handler = handler;
             _signInManager = signInManager;
             _userManager = userManager;
+            _roleManager = roleManager;
         }
         public IActionResult CreateUser()
         {
@@ -39,7 +41,23 @@ namespace Blog.Presentation.Controllers
             appUser.Email = model.Email;
             appUser.UserName = model.UserName;
             appUser.PhoneNumber = model.PhoneNumber;
-            await _userManager.CreateAsync(appUser, model.Password);
+            var response =  await _userManager.CreateAsync(appUser, model.Password);
+            if (response.Succeeded)
+            {
+                var role = await _roleManager.FindByNameAsync("Member");
+                if(role == null)
+                {
+                    var appRole = new AppRole()
+                    {
+                        Id = Guid.NewGuid().ToString(),
+                        Name = "Member"
+                    };
+                    await _roleManager.CreateAsync(appRole);
+                }
+
+                await _userManager.AddToRoleAsync(appUser, "Member");
+            }
+
             return View();
         }
 

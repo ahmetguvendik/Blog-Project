@@ -1,31 +1,26 @@
 ﻿<Properties StartupConfiguration="{BBA0D003-79DA-4ED8-843B-16A1858A4F09}|https">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Presentation.Blog.Presentation PreferredExecutionTarget="/Applications/Brave Browser.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Presentation/Blog.Presentation/Controllers/BlogController.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Presentation/Blog.Presentation/Views/Shared/_Layout.cshtml">
     <Files>
-      <File FileName="Core/Blog.Application/Features/Commands/Blog/RemoveBlog/RemoveBlogCommandResponse.cs" Line="6" Column="3" />
-      <File FileName="Presentation/Blog.Presentation/Controllers/BlogController.cs" Line="84" Column="10" />
-      <File FileName="Core/Blog.Application/ViewModels/Blog/VM_Blog_Create.cs" Line="10" Column="8" />
-      <File FileName="Core/Blog.Domain/Entities/Blog.cs" Line="6" Column="3" />
-      <File FileName="Presentation/Blog.Presentation/Views/Blog/GetBlog.cshtml" Line="26" Column="10" />
-      <File FileName="Presentation/Blog.Presentation/Views/Blog/CreateBlog.cshtml" Line="1" Column="1" />
-      <File FileName="Core/Blog.Application/Features/Commands/Blog/CreateBlog/CreateBlogCommandHandler.cs" Line="20" Column="49" />
-      <File FileName="Presentation/Blog.Presentation/Controllers/UserController.cs" Line="66" Column="10" />
-      <File FileName="Core/Blog.Application/Features/Commands/User/CreateUser/CreateUserCommandHandler.cs" Line="1" Column="1" />
-      <File FileName="Core/Blog.Application/Features/Commands/User/SignInUser/SignInUserCommandHandler.cs" Line="34" Column="33" />
-      <File FileName="Core/Blog.Application/ViewModels/User/VM_User_Create.cs" Line="9" Column="43" />
-      <File FileName="Presentation/Blog.Presentation/Views/User/CreateUser.cshtml" Line="39" Column="8" />
-      <File FileName="Core/Blog.Application/ViewModels/User/VM_User_SignIn.cs" Line="9" Column="25" />
-      <File FileName="Presentation/Blog.Presentation/Views/User/SignIn.cshtml" Line="8" Column="51" />
-      <File FileName="Presentation/Blog.Presentation/Controllers/HomeController.cs" Line="1" Column="1" />
-      <File FileName="Presentation/Blog.Presentation/Views/Shared/_Layout.cshtml" Line="22" Column="60" />
-      <File FileName="Core/Blog.Application/ViewModels/Blog/VM_Blog_Update.cs" Line="9" Column="50" />
-      <File FileName="Presentation/Blog.Presentation/Views/Blog/UpdateBlog.cshtml" Line="21" Column="17" />
-      <File FileName="Infrastructure/Blog.Persistance/Services/TokenHandler.cs" Line="31" Column="18" />
+      <File FileName="Core/Blog.Application/Features/Commands/Blog/RemoveBlog/RemoveBlogCommandResponse.cs" />
+      <File FileName="Presentation/Blog.Presentation/Controllers/BlogController.cs" Line="38" Column="27" />
+      <File FileName="Core/Blog.Application/ViewModels/Blog/VM_Blog_Create.cs" />
+      <File FileName="Core/Blog.Domain/Entities/Blog.cs" />
+      <File FileName="Presentation/Blog.Presentation/Views/Blog/GetBlog.cshtml" />
+      <File FileName="Presentation/Blog.Presentation/Views/Blog/CreateBlog.cshtml" />
+      <File FileName="Core/Blog.Application/Features/Commands/Blog/CreateBlog/CreateBlogCommandHandler.cs" />
+      <File FileName="Presentation/Blog.Presentation/Controllers/UserController.cs" Line="58" Column="67" />
+      <File FileName="Core/Blog.Application/Features/Commands/User/CreateUser/CreateUserCommandHandler.cs" />
+      <File FileName="Core/Blog.Application/Features/Commands/User/SignInUser/SignInUserCommandHandler.cs" />
+      <File FileName="Core/Blog.Application/ViewModels/User/VM_User_Create.cs" />
+      <File FileName="Presentation/Blog.Presentation/Views/User/CreateUser.cshtml" />
+      <File FileName="Core/Blog.Application/ViewModels/User/VM_User_SignIn.cs" />
+      <File FileName="Presentation/Blog.Presentation/Views/User/SignIn.cshtml" />
+      <File FileName="Presentation/Blog.Presentation/Controllers/HomeController.cs" />
+      <File FileName="Presentation/Blog.Presentation/Views/Shared/_Layout.cshtml" Line="32" Column="1" />
+      <File FileName="Core/Blog.Application/ViewModels/Blog/VM_Blog_Update.cs" />
+      <File FileName="Presentation/Blog.Presentation/Views/Blog/UpdateBlog.cshtml" />
+      <File FileName="Infrastructure/Blog.Persistance/Services/TokenHandler.cs" />
       <File FileName="Presentation/Blog.Presentation/Program.cs" Line="27" Column="32" />
     </Files>
     <Pads>
@@ -46,7 +41,13 @@
             </Node>
             <Node name="Presentation" expanded="True">
               <Node name="Blog.Presentation" expanded="True">
-                <Node name="Views" expanded="True" />
+                <Node name="Controllers" expanded="True" />
+                <Node name="Views" expanded="True">
+                  <Node name="Shared" expanded="True">
+                    <Node name="_Layout.cshtml" selected="True" />
+                  </Node>
+                  <Node name="User" expanded="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -54,5 +55,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Presentation.Blog.Presentation PreferredExecutionTarget="/Applications/Brave Browser.app" />
 </Properties>
