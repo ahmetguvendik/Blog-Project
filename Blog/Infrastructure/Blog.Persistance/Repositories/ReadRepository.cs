@@ -15,7 +15,7 @@ namespace Blog.Persistance.Repositories
 
         public DbSet<T> Table => _context.Set<T>();
 
-        public async Task<IQueryable<T>> GetAll()
+        public IQueryable<T> GetAll()
         {
             return Table;
         }

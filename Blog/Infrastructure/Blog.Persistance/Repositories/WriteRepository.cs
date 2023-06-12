@@ -29,6 +29,7 @@ namespace Blog.Persistance.Repositories
 
         public async Task<bool> RemoveAsync(string id)
         {
+          
             T model = await Table.FirstOrDefaultAsync(x => x.Id == id);
             return Remove(model);
         }

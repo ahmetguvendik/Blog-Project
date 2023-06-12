@@ -1,5 +1,5 @@
-﻿@using Blog.Application.Features.Commands.User.CreateUser
-@model CreateUserCommandResponse
+﻿@using Blog.Application.ViewModels.User
+@model VM_User_Create
 
 <form asp-action="CreateUser" asp-controller="User" method="post">
 
@@ -20,13 +20,6 @@
     <div>
         <label>Sifre Giriniz</label>
         <input type="password" asp-for=@Model.Password />
-    </div>
-
-    <br />
-
-    <div>
-        <label>Sifreyi Tekrar Giriniz</label>
-        <input type="password" asp-for=@Model.PasswordConfirm />
     </div>
 
     <br />

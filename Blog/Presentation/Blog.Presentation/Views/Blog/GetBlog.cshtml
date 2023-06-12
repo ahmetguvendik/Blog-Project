@@ -1,5 +1,5 @@
 ﻿@using Blog.Application.Features.Queries.Blog.GetAllBlog
-@model GetAllBlogQueryResponse
+@model IQueryable<Blog.Domain.Entities.Blog>
 
 <table>
     <thead>
@@ -7,10 +7,23 @@
             <th>Title</th>
             <th>Description</th>
             <th>CreatedTime</th>
+            <th>Update</th>
+            <th>Remove</th>
+
         </tr>
     </thead>
     <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.Title</th>
+                <th>@item.Description</th>
+                <th>@item.CreatedTime</th>
+                <th><a asp-action="UpdateBlog" asp-controller="Blog" asp-route-id=@item.Id>Güncelle</a></th>
+                <th><a asp-action="RemoveBlog" asp-controller="Blog" asp-route-id=@item.Id>Sil</a></th>
       
+            </tr>
+        }
 
     </tbody>
 

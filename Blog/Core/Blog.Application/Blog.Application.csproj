@@ -19,6 +19,13 @@
     <None Remove="Features\Queries\User\" />
     <None Remove="Features\Commands\User\CreateUser\" />
     <None Remove="Features\Commands\User\SignInUser\" />
+    <None Remove="Services\" />
+    <None Remove="DTOs\" />
+    <None Remove="Features\Commands\Blog\RemoveBlog\" />
+    <None Remove="Features\Queries\Blog\GetByIdBlog\" />
+    <None Remove="ViewModels\" />
+    <None Remove="ViewModels\Blog\" />
+    <None Remove="ViewModels\User\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Repositories\" />
@@ -33,6 +40,13 @@
     <Folder Include="Features\Queries\User\" />
     <Folder Include="Features\Commands\User\CreateUser\" />
     <Folder Include="Features\Commands\User\SignInUser\" />
+    <Folder Include="Services\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="Features\Commands\Blog\RemoveBlog\" />
+    <Folder Include="Features\Queries\Blog\GetByIdBlog\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="ViewModels\Blog\" />
+    <Folder Include="ViewModels\User\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
@@ -42,6 +56,8 @@
     </PackageReference>
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
     <PackageReference Include="MediatR" Version="12.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Blog.Domain\Blog.Domain.csproj" />

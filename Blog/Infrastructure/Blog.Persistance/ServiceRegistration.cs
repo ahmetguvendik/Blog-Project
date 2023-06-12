@@ -1,8 +1,10 @@
 ﻿using System;
 using Blog.Application.Repositories;
+using Blog.Application.Services;
 using Blog.Domain.Entities;
 using Blog.Persistance.Contexts;
 using Blog.Persistance.Repositories;
+using Blog.Persistance.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,7 +19,8 @@ namespace Blog.Persistance
             collection.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BlogDbContext>();
             collection.AddScoped<IBlogReadRepository, BlogReadRepository>();
 			collection.AddScoped<IBlogWriteRepository, BlogWriteRepository>();
-		}
+            collection.AddScoped<ITokenHandler, TokenHandler>();
+        }
 	}
 }
 

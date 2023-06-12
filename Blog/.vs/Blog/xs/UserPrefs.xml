@@ -1,71 +1,39 @@
 ﻿<Properties StartupConfiguration="{BBA0D003-79DA-4ED8-843B-16A1858A4F09}|https">
-  <MonoDevelop.Ide.ItemProperties.Presentation.Blog.Presentation PreferredExecutionTarget="/Applications/Brave Browser.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Core/Blog.Application/Features/Commands/User/CreateUser/CreateUserCommandResponse.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Presentation.Blog.Presentation PreferredExecutionTarget="/Applications/Brave Browser.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Presentation/Blog.Presentation/Controllers/BlogController.cs">
     <Files>
-      <File FileName="Presentation/Blog.Presentation/Controllers/BlogController.cs" Line="14" Column="7" />
-      <File FileName="Presentation/Blog.Presentation/Views/Shared/_Layout.cshtml" />
-      <File FileName="Presentation/Blog.Presentation/Views/Blog/GetBlog.cshtml" />
+      <File FileName="Core/Blog.Application/Features/Commands/Blog/RemoveBlog/RemoveBlogCommandResponse.cs" Line="6" Column="3" />
+      <File FileName="Presentation/Blog.Presentation/Controllers/BlogController.cs" Line="84" Column="10" />
+      <File FileName="Core/Blog.Application/ViewModels/Blog/VM_Blog_Create.cs" Line="10" Column="8" />
+      <File FileName="Core/Blog.Domain/Entities/Blog.cs" Line="6" Column="3" />
+      <File FileName="Presentation/Blog.Presentation/Views/Blog/GetBlog.cshtml" Line="26" Column="10" />
       <File FileName="Presentation/Blog.Presentation/Views/Blog/CreateBlog.cshtml" Line="1" Column="1" />
-      <File FileName="Core/Blog.Application/Features/Queries/Blog/GetAllBlog/GetAllBlogQueryRequest.cs" />
-      <File FileName="Core/Blog.Application/Features/Queries/Blog/GetAllBlog/GetAllBlogQueryResponse.cs" />
-      <File FileName="Core/Blog.Application/Features/Queries/Blog/GetAllBlog/GetAllBlogQueryHandler.cs" />
-      <File FileName="Infrastructure/Blog.Persistance/ServiceRegistration.cs" Line="21" Column="3" />
-      <File FileName="Infrastructure/Blog.Persistance/Repositories/ReadRepository.cs" />
-      <File FileName="Infrastructure/Blog.Persistance/Repositories/BlogReadRepository.cs" />
-      <File FileName="Core/Blog.Application/Repositories/IReadRepository.cs" />
-      <File FileName="Core/Blog.Application/Repositories/IBlogReadRepository.cs" />
-      <File FileName="Core/Blog.Application/Repositories/IRepository.cs" />
-      <File FileName="Infrastructure/Blog.Persistance/Repositories/BlogWriteRepository.cs" />
-      <File FileName="Infrastructure/Blog.Persistance/Repositories/WriteRepository.cs" />
-      <File FileName="Core/Blog.Application/Repositories/IWriteRepository.cs" />
-      <File FileName="Core/Blog.Application/Repositories/IBlogWriteRepository.cs" />
-      <File FileName="Core/Blog.Application/Blog.Application.csproj" />
-      <File FileName="Core/Blog.Domain/Entities/Blog.cs" Line="14" Column="1" />
-      <File FileName="Core/Blog.Application/Features/Commands/Blog/CreateBlog/CreateBlogCommandRequest.cs" />
-      <File FileName="Core/Blog.Application/Features/Commands/Blog/CreateBlog/CreateBlogCommandResponse.cs" />
-      <File FileName="Core/Blog.Application/Features/Commands/Blog/CreateBlog/CreateBlogCommandHandler.cs" />
-      <File FileName="Presentation/Blog.Presentation/Program.cs" Line="12" Column="1" />
-      <File FileName="Core/Blog.Application/ServiceRegistration.cs" Line="1" Column="1" />
-      <File FileName="Presentation/Blog.Presentation/Controllers/HomeController.cs" />
-      <File FileName="Presentation/Blog.Presentation/Controllers/UserController.cs" Line="29" Column="33" />
-      <File FileName="Presentation/Blog.Presentation/Views/_ViewImports.cshtml" />
-      <File FileName="Presentation/Blog.Presentation/Views/_ViewStart.cshtml" />
-      <File FileName="Presentation/Blog.Presentation/Views/User/CreateUser.cshtml" Line="13" Column="10" />
-      <File FileName="Presentation/Blog.Presentation/Views/User/SignIn.cshtml" />
-      <File FileName="Infrastructure/Blog.Persistance/Contexts/BlogDbContext.cs" />
-      <File FileName="Core/Blog.Domain/Entities/AppUser.cs" />
-      <File FileName="Core/Blog.Domain/Entities/AppRole.cs" />
-      <File FileName="Infrastructure/Blog.Persistance/DesignTimeDbContext.cs" />
-      <File FileName="Core/Blog.Application/Features/Commands/User/CreateUser/CreateUserCommandRequest.cs" Line="8" Column="7" />
-      <File FileName="Core/Blog.Application/Features/Commands/User/CreateUser/CreateUserCommandResponse.cs" Line="12" Column="6" />
-      <File FileName="Core/Blog.Application/Features/Commands/User/CreateUser/CreateUserCommandHandler.cs" Line="30" Column="1" />
-      <File FileName="Core/Blog.Application/Features/Commands/User/SignInUser/SignInUserCommandRequest.cs" Line="6" Column="76" />
-      <File FileName="Core/Blog.Application/Features/Commands/User/SignInUser/SignInUserCommandResponse.cs" Line="1" Column="1" />
-      <File FileName="Core/Blog.Application/Features/Commands/User/SignInUser/SignInUserCommandHandler.cs" Line="10" Column="4" />
+      <File FileName="Core/Blog.Application/Features/Commands/Blog/CreateBlog/CreateBlogCommandHandler.cs" Line="20" Column="49" />
+      <File FileName="Presentation/Blog.Presentation/Controllers/UserController.cs" Line="66" Column="10" />
+      <File FileName="Core/Blog.Application/Features/Commands/User/CreateUser/CreateUserCommandHandler.cs" Line="1" Column="1" />
+      <File FileName="Core/Blog.Application/Features/Commands/User/SignInUser/SignInUserCommandHandler.cs" Line="34" Column="33" />
+      <File FileName="Core/Blog.Application/ViewModels/User/VM_User_Create.cs" Line="9" Column="43" />
+      <File FileName="Presentation/Blog.Presentation/Views/User/CreateUser.cshtml" Line="39" Column="8" />
+      <File FileName="Core/Blog.Application/ViewModels/User/VM_User_SignIn.cs" Line="9" Column="25" />
+      <File FileName="Presentation/Blog.Presentation/Views/User/SignIn.cshtml" Line="8" Column="51" />
+      <File FileName="Presentation/Blog.Presentation/Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="Presentation/Blog.Presentation/Views/Shared/_Layout.cshtml" Line="22" Column="60" />
+      <File FileName="Core/Blog.Application/ViewModels/Blog/VM_Blog_Update.cs" Line="9" Column="50" />
+      <File FileName="Presentation/Blog.Presentation/Views/Blog/UpdateBlog.cshtml" Line="21" Column="17" />
+      <File FileName="Infrastructure/Blog.Persistance/Services/TokenHandler.cs" Line="31" Column="18" />
+      <File FileName="Presentation/Blog.Presentation/Program.cs" Line="27" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Blog" expanded="True">
             <Node name="Core" expanded="True">
-              <Node name="Blog.Application" expanded="True">
-                <Node name="Features" expanded="True">
-                  <Node name="Commands" expanded="True">
-                    <Node name="Blog" expanded="True" />
-                    <Node name="User" expanded="True">
-                      <Node name="CreateUser" expanded="True">
-                        <Node name="CreateUserCommandResponse.cs" selected="True" />
-                      </Node>
-                      <Node name="SignInUser" expanded="True" />
-                    </Node>
-                  </Node>
-                  <Node name="Queries" expanded="True" />
-                </Node>
-              </Node>
+              <Node name="Blog.Application" expanded="True" />
               <Node name="Blog.Domain" expanded="True">
                 <Node name="Entities" expanded="True" />
               </Node>
@@ -74,18 +42,11 @@
               <Node name="Blog.Infrastructure" expanded="True" />
               <Node name="Blog.Persistance" expanded="True">
                 <Node name="Contexts" expanded="True" />
-                <Node name="Repositories" expanded="True" />
               </Node>
             </Node>
             <Node name="Presentation" expanded="True">
               <Node name="Blog.Presentation" expanded="True">
-                <Node name="Controllers" expanded="True" />
-                <Node name="Models" expanded="True" />
-                <Node name="Views" expanded="True">
-                  <Node name="Blog" expanded="True" />
-                  <Node name="Shared" expanded="True" />
-                  <Node name="User" expanded="True" />
-                </Node>
+                <Node name="Views" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -93,6 +54,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
 </Properties>

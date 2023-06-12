@@ -1,0 +1,25 @@
+﻿@using Blog.Application.ViewModels.Blog
+@model VM_Blog_Update
+
+<form asp-action="UpdateBlog" asp-controller="Blog" method="post">
+
+    <div>
+        <label>Title</label>
+        <input type="text" asp-for=@Model.Title />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Description</label>
+        <input type="text" asp-for=@Model.Description />
+    </div>
+
+    <br />
+
+    <div>
+        <button>
+            Update
+        </button>
+    </div>
+</form>

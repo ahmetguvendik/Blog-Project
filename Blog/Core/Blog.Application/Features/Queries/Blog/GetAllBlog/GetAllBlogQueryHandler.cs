@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Blog.Application.Features.Queries.Blog.GetAllBlog
 {
-	public class GetAllBlogQueryHandler : IRequestHandler<GetAllBlogQueryRequest,GetAllBlogQueryResponse>
+	public class GetAllBlogQueryHandler : IRequestHandler<GetAllBlogQueryRequest,IQueryable<Domain.Entities.Blog>>
 	{
         private readonly IBlogReadRepository _readRepository;
  
@@ -14,14 +14,9 @@ namespace Blog.Application.Features.Queries.Blog.GetAllBlog
     
 		}
 
-        public async Task<GetAllBlogQueryResponse> Handle(GetAllBlogQueryRequest request, CancellationToken cancellationToken)
+        public async Task<IQueryable<Domain.Entities.Blog>> Handle(GetAllBlogQueryRequest request, CancellationToken cancellationToken)
         {
-            var blogs = await _readRepository.GetAll();
-            
-            return new GetAllBlogQueryResponse()
-            {
-                Blogs = blogs
-            };
+            return _readRepository.GetAll();
         }
     }
 }

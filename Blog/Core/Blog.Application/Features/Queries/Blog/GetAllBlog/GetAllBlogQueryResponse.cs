@@ -3,8 +3,11 @@ namespace Blog.Application.Features.Queries.Blog.GetAllBlog
 {
 	public class GetAllBlogQueryResponse
 	{
-        public IQueryable Blogs { get; set; }
-    
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public DateTime CreatedTime { get; set; }
+        public DateTime UpdatedTime { get; set; }
+
     }
 }
 
