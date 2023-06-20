@@ -9,31 +9,51 @@ using Microsoft.Extensions.Logging;
 using Serilog.Core;
 using Serilog;
 using Serilog.Sinks.PostgreSQL;
+using Microsoft.AspNetCore.Authorization;
+using Blog.Presentation.Controllers;
+using Blog.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+using Blog.Persistance.Contexts;
+using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddControllers(x => x.Filters.Add<BlogController>());
 builder.Services.AddControllersWithViews();
 builder.Services.AddPersistanceService();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Blog.Application.ServiceRegistration).GetTypeInfo().Assembly));
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer("Admin", opt =>
+
+
+builder.Services.AddCors();
+
+builder.Services.AddAuthentication(opt => {
+    //opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    //opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    //opt.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(opt =>
 {
+    opt.SaveToken = true;
     opt.TokenValidationParameters = new()
     {
         ValidateAudience = true,
         ValidateIssuer = true,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        RoleClaimType = "role",
+        ClockSkew = TimeSpan.Zero,
 
         ValidAudience = builder.Configuration["Token:Audience"],
         ValidIssuer = builder.Configuration["Token:Issuer"],
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Token:Key"])),
-        LifetimeValidator = (notBefore, expires, securityToken, validationParameters) => expires != null ? expires > DateTime.UtcNow : false,
+        LifetimeValidator = (notBefore, expires, securityToken, validationParameters) => expires != null ? expires > DateTime.Now : false,
         NameClaimType = ClaimTypes.Name
     };
 });
 
+builder.Services.Configure<DataProtectionTokenProviderOptions>(opt => opt.TokenLifespan = TimeSpan.FromMinutes(15));  
 Logger log = new LoggerConfiguration()
 //    .WriteTo.Console()
     .WriteTo.File("logs/log.txt")
@@ -58,16 +78,16 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthentication();
+
+app.UseCors();
 
 app.UseAuthorization();
 

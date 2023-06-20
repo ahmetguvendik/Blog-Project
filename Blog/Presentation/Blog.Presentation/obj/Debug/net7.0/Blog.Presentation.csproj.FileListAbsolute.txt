@@ -70,3 +70,6 @@
 /Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Presentation/Blog.Presentation/obj/Debug/net7.0/Blog.Presentation.pdb
 /Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Presentation/Blog.Presentation/obj/Debug/net7.0/Blog.Presentation.genruntimeconfig.cache
 /Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Presentation/Blog.Presentation/obj/Debug/net7.0/ref/Blog.Presentation.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Presentation/Blog.Presentation/bin/Debug/net7.0/BouncyCastle.Cryptography.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Presentation/Blog.Presentation/bin/Debug/net7.0/MailKit.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Presentation/Blog.Presentation/bin/Debug/net7.0/MimeKit.dll

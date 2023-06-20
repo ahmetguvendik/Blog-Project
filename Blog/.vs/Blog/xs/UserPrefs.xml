@@ -1,51 +1,51 @@
 ﻿<Properties StartupConfiguration="{BBA0D003-79DA-4ED8-843B-16A1858A4F09}|https">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Presentation/Blog.Presentation/Views/Shared/_Layout.cshtml">
+  <MonoDevelop.Ide.ItemProperties.Presentation.Blog.Presentation PreferredExecutionTarget="/Applications/Brave Browser.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Presentation/Blog.Presentation/Controllers/UserController.cs">
     <Files>
-      <File FileName="Core/Blog.Application/Features/Commands/Blog/RemoveBlog/RemoveBlogCommandResponse.cs" />
-      <File FileName="Presentation/Blog.Presentation/Controllers/BlogController.cs" Line="38" Column="27" />
-      <File FileName="Core/Blog.Application/ViewModels/Blog/VM_Blog_Create.cs" />
-      <File FileName="Core/Blog.Domain/Entities/Blog.cs" />
+      <File FileName="Presentation/Blog.Presentation/Program.cs" />
+      <File FileName="Presentation/Blog.Presentation/Controllers/BlogController.cs" />
+      <File FileName="Presentation/Blog.Presentation/Controllers/UserController.cs" Line="91" Column="1" />
+      <File FileName="Presentation/Blog.Presentation/Controllers/MemberBlogController.cs" />
+      <File FileName="Presentation/Blog.Presentation/Views/MemberBlog/GetBlogTitle.cshtml" />
       <File FileName="Presentation/Blog.Presentation/Views/Blog/GetBlog.cshtml" />
-      <File FileName="Presentation/Blog.Presentation/Views/Blog/CreateBlog.cshtml" />
-      <File FileName="Core/Blog.Application/Features/Commands/Blog/CreateBlog/CreateBlogCommandHandler.cs" />
-      <File FileName="Presentation/Blog.Presentation/Controllers/UserController.cs" Line="58" Column="67" />
-      <File FileName="Core/Blog.Application/Features/Commands/User/CreateUser/CreateUserCommandHandler.cs" />
-      <File FileName="Core/Blog.Application/Features/Commands/User/SignInUser/SignInUserCommandHandler.cs" />
-      <File FileName="Core/Blog.Application/ViewModels/User/VM_User_Create.cs" />
-      <File FileName="Presentation/Blog.Presentation/Views/User/CreateUser.cshtml" />
-      <File FileName="Core/Blog.Application/ViewModels/User/VM_User_SignIn.cs" />
-      <File FileName="Presentation/Blog.Presentation/Views/User/SignIn.cshtml" />
+      <File FileName="Presentation/Blog.Presentation/Views/MemberBlog/DetailBlog.cshtml" />
+      <File FileName="Presentation/Blog.Presentation/Views/Shared/_Layout.cshtml" />
       <File FileName="Presentation/Blog.Presentation/Controllers/HomeController.cs" />
-      <File FileName="Presentation/Blog.Presentation/Views/Shared/_Layout.cshtml" Line="32" Column="1" />
-      <File FileName="Core/Blog.Application/ViewModels/Blog/VM_Blog_Update.cs" />
-      <File FileName="Presentation/Blog.Presentation/Views/Blog/UpdateBlog.cshtml" />
-      <File FileName="Infrastructure/Blog.Persistance/Services/TokenHandler.cs" />
-      <File FileName="Presentation/Blog.Presentation/Program.cs" Line="27" Column="32" />
+      <File FileName="Infrastructure/Blog.Persistance/ServiceRegistration.cs" Line="24" Column="3" />
+      <File FileName="Presentation/Blog.Presentation/Views/User/SignIn.cshtml" Line="25" Column="1" />
+      <File FileName="Presentation/Blog.Presentation/Views/_ViewStart.cshtml" Line="2" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Blog" expanded="True">
             <Node name="Core" expanded="True">
-              <Node name="Blog.Application" expanded="True" />
-              <Node name="Blog.Domain" expanded="True">
-                <Node name="Entities" expanded="True" />
+              <Node name="Blog.Application" expanded="True">
+                <Node name="Validations" selected="True" />
+                <Node name="ViewModels" expanded="True">
+                  <Node name="User" expanded="True" />
+                </Node>
               </Node>
             </Node>
             <Node name="Infrastructure" expanded="True">
-              <Node name="Blog.Infrastructure" expanded="True" />
               <Node name="Blog.Persistance" expanded="True">
                 <Node name="Contexts" expanded="True" />
+                <Node name="Services" expanded="True" />
               </Node>
             </Node>
             <Node name="Presentation" expanded="True">
               <Node name="Blog.Presentation" expanded="True">
                 <Node name="Controllers" expanded="True" />
                 <Node name="Views" expanded="True">
-                  <Node name="Shared" expanded="True">
-                    <Node name="_Layout.cshtml" selected="True" />
-                  </Node>
+                  <Node name="Blog" expanded="True" />
+                  <Node name="MemberBlog" expanded="True" />
+                  <Node name="Shared" expanded="True" />
                   <Node name="User" expanded="True" />
                 </Node>
               </Node>
@@ -53,12 +53,11 @@
           </Node>
         </State>
       </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>link</Value>
+        </State>
+      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Presentation.Blog.Presentation PreferredExecutionTarget="/Applications/Brave Browser.app" />
 </Properties>

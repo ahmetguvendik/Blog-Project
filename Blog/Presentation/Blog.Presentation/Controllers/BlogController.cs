@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Blog.Application.Features.Commands.Blog.CreateBlog;
-using Blog.Application.Features.Commands.Blog.RemoveBlog;
-using Blog.Application.Features.Queries.Blog.GetAllBlog;
-using Blog.Application.Features.Queries.Blog.GetByIdBlog;
-using Blog.Application.Repositories;
+﻿using Blog.Application.Repositories;
 using Blog.Application.ViewModels.Blog;
-using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blog.Presentation.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class BlogController : Controller
     {
         private readonly IBlogWriteRepository _writeRepository;
@@ -25,22 +18,19 @@ namespace Blog.Presentation.Controllers
         }
 
         [HttpGet]
-        [Authorize]
         public IActionResult GetBlog()
         {
            var blogs = _readRepository.GetAll();
            return View(blogs);
         }
 
-        [Authorize(Roles = "Admin")]
         public IActionResult CreateBlog()
         {
             return View();
         }
           
         [HttpPost]
-        [Authorize(Roles ="Admin")]
-        public async Task<IActionResult> CreateBlog(VM_Blog_Create model)
+         public async Task<IActionResult> CreateBlog(VM_Blog_Create model)
         {
             var blog = new Domain.Entities.Blog();
             blog.Id = Guid.NewGuid().ToString();
@@ -52,7 +42,7 @@ namespace Blog.Presentation.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
+       
         public async Task<IActionResult> UpdateBlog(string id)
         {
             if(id == null)
@@ -78,7 +68,7 @@ namespace Blog.Presentation.Controllers
             return RedirectToAction("GetBlog", "Blog");
         }
 
-        [Authorize(Roles = "Admin")]
+       
         public async Task<IActionResult> RemoveBlog(string id)
         {
             await _writeRepository.RemoveAsync(id);

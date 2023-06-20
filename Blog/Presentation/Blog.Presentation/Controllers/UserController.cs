@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Blog.Application.Features.Commands.User.CreateUser;
-using Blog.Application.Features.Commands.User.SignInUser;
-using Blog.Application.Services;
+﻿using Blog.Application.Services;
 using Blog.Application.ViewModels.User;
 using Blog.Domain.Entities;
-using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using Microsoft.EntityFrameworkCore;
 
 namespace Blog.Presentation.Controllers
 {
@@ -21,12 +13,14 @@ namespace Blog.Presentation.Controllers
         private readonly SignInManager<AppUser> _signInManager;
         private readonly RoleManager<AppRole> _roleManager;
         private readonly ITokenHandler _handler;
+      
         public UserController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenHandler handler,RoleManager<AppRole> roleManager)
         {
             _handler = handler;
             _signInManager = signInManager;
             _userManager = userManager;
             _roleManager = roleManager;
+       
         }
         public IActionResult CreateUser()
         {
@@ -41,6 +35,7 @@ namespace Blog.Presentation.Controllers
             appUser.Email = model.Email;
             appUser.UserName = model.UserName;
             appUser.PhoneNumber = model.PhoneNumber;
+            
             var response =  await _userManager.CreateAsync(appUser, model.Password);
             if (response.Succeeded)
             {
@@ -70,13 +65,25 @@ namespace Blog.Presentation.Controllers
         public async Task<IActionResult>SignIn(VM_User_SignIn model)
         {
             if (ModelState.IsValid)
-            {             
+            {
+                var appUser = await _userManager.FindByNameAsync(model.Username);
+               
                 var response = await _signInManager.PasswordSignInAsync(model.Username, model.Password, false,false);
+               
                 if (response.Succeeded)
                 {
-                    var user = await _userManager.FindByNameAsync(model.Username);
-                     var token = _handler.CreateAccessToken(user);
-                    return RedirectToAction("GetBlog", "Blog");
+                    var token = _handler.CreateAccessToken(appUser);
+                    var role = await _userManager.GetRolesAsync(appUser);
+                 //   var userId = await _userManager.FindByIdAsync(appUser.Id.ToString());
+                    if (role.Contains("Member"))
+                    {
+                        return RedirectToAction("GetBlogTitle", "MemberBlog");
+                    }
+                    else if (role.Contains("Admin")) {
+                        return RedirectToAction("GetBlog", "Blog");
+                    }
+                    //   var user = await _userManager.FindByNameAsync(model.Username);
+                     
                 }
             }
            
@@ -85,8 +92,59 @@ namespace Blog.Presentation.Controllers
 
         public async Task<IActionResult> SignOut()
         {
-           await _signInManager.SignOutAsync();
+            await _signInManager.SignOutAsync();
             return RedirectToAction("SignIn", "User");
+        }
+
+        public IActionResult ResetPassword(string token, string email)
+        {
+            var model = new ResetPassword { Token = token, Email = email };
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ResetPassword(ResetPassword resetPassword)
+        {
+            var user = await _userManager.FindByEmailAsync(resetPassword.Email);
+            if(user != null)
+            {
+                var resetResult = await _userManager.ResetPasswordAsync(user, resetPassword.Token, resetPassword.Password);
+                if (resetResult.Succeeded)
+                {
+                    return RedirectToAction("SignIn", "User");
+                }
+
+            }
+
+            return View();
+            }
+      
+
+        public IActionResult ResetPasswordForEmail()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ResetPasswordForEmail(string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            if(user !=null)
+            {
+                var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+                var link = Url.Action(nameof(ResetPassword), "User", new
+                {
+                    token,
+                    email = user.Email
+                },
+                Request.Scheme
+                );
+
+              
+            }
+
+            return View();
         }
     }
 }

@@ -3,23 +3,30 @@
 
 <form asp-action="SignIn" asp-controller="User" method="post">
 
-    <div>
-        <label>Kullanici Adi Ya Da Email Giriniz</label>
+    <div class="col-md-4">
+        <label>Kullanici Adi Giriniz</label>
         <input type="text" asp-for=@Model.Username />
     </div>
 
     <br />
 
-    <div>
+    <div class="col-md-4">
         <label>Sifrenizi Giriniz</label>
         <input type="password" asp-for=@Model.Password />
     </div>
 
     <br />
 
-    <div>
+    <div class="col-md-4">
         <button>
             Sign In
         </button>
     </div>
+
+    <br />
+
+    <div class="col-md-4">
+        <a asp-action="ResetPasswordForEmail" asp-controller="User">Reset Password</a>
+    </div>
+
 </form>

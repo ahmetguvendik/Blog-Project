@@ -19,21 +19,21 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Blog" asp-action="GetBlog">Show Blog</a>
-                            </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="SignOut">Sign Out</a>
-                            </li>
-                        }
 
                         @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                         {
                             <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Blog" asp-action="GetBlog">Show Blog</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Blog" asp-action="CreateBlog">Create Blog</a>
+                            </li>
+                        }
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("Member"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="MemberBlog" asp-action="GetBlogTitle">Show Blog</a>
                             </li>
                         }
 
@@ -46,7 +46,13 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="SignIn">Sign In</a>
                             </li>
                         }
+                        @if (User.Identity.IsAuthenticated)
+                        {
 
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="SignOut">Sign Out</a>
+                            </li>
+                        }
 
                     </ul>
                 </div>

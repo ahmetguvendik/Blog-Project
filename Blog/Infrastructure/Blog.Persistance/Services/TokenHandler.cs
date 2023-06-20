@@ -21,24 +21,25 @@ namespace Blog.Persistance.Services
         public Token CreateAccessToken(AppUser user)
         {
             Token token = new Token();
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Token:Key"]));
-            var signingCredientails = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            token.ExpinationTime = DateTime.UtcNow.AddMinutes(15);
+            SymmetricSecurityKey securityKey = new(Encoding.UTF8.GetBytes(_configuration["Token:Key"]));
+            SigningCredentials signingCredentials = new(securityKey, SecurityAlgorithms.HmacSha256);
+            //Oluşturulacak token ayarlarını veriyoruz.
+            token.ExpinationTime = DateTime.Now.AddSeconds(20);
             JwtSecurityToken securityToken = new(
                 audience: _configuration["Token:Audience"],
                 issuer: _configuration["Token:Issuer"],
-                claims: new[]
-                {
-                    new Claim("role","Admin"),
-                },
                 expires: token.ExpinationTime,
-                notBefore: DateTime.UtcNow,
-                signingCredentials: signingCredientails
-                );;
+                notBefore: DateTime.Now,
+                signingCredentials: signingCredentials,
+                claims: new List<Claim> {
+                    new(ClaimTypes.Name, user.UserName),
+                }
+                );
 
-            JwtSecurityTokenHandler handler = new();
-            token.AccessToken = handler.WriteToken(securityToken);
+            JwtSecurityTokenHandler tokenHandler = new();
+            token.AccessToken = tokenHandler.WriteToken(securityToken);
             return token;
+
         }
     }
 }

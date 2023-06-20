@@ -1,0 +1,19 @@
+﻿@using Blog.Application.Features.Queries.Blog.GetAllBlog
+@model IQueryable<Blog.Domain.Entities.Blog>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.Title</th>
+                <th><a asp-action="DetailBlog" asp-controller="MemberBlog" asp-route-id=@item.Id>Detay</a></th>
+            </tr>
+        }
+    </tbody>
+</table>
