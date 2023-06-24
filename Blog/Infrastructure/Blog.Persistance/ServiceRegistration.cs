@@ -20,8 +20,8 @@ namespace Blog.Persistance
             collection.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BlogDbContext>().AddTokenProvider<DataProtectorTokenProvider<AppUser>>(TokenOptions.DefaultProvider); ;
             collection.AddScoped<IBlogReadRepository, BlogReadRepository>();
 			collection.AddScoped<IBlogWriteRepository, BlogWriteRepository>();
-            collection.AddScoped<ITokenHandler, TokenHandler>();
-		
+			collection.AddScoped<IEmailService, EmailService>();
+
         }
 	}
 }

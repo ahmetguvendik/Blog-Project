@@ -3,30 +3,42 @@
 
 <form asp-action="CreateUser" asp-controller="User" method="post">
 
-    <div>
-        <label>Email Giriniz</label>
-        <input type="email" asp-for=@Model.Email />
+    <div class="mb-3">
+        <label>
+            Email
+        </label>
+        <span class="text-danger" asp-validation-for=@Model.Email></span>
+        <input type="email" asp-for=@Model.Email class=form-control />
     </div>
 
     <br />
 
-    <div>
-        <label>Kullanici Adi Giriniz</label>
-        <input type="text" asp-for=@Model.UserName />
+    <div class="mb-3">
+        <label>
+            Username:
+        </label>
+        <span class="text-danger" asp-validation-for=@Model.UserName></span>
+        <input type="text" asp-for=@Model.UserName class=form-control />
     </div>
 
     <br />
 
-    <div>
-        <label>Sifre Giriniz</label>
-        <input type="password" asp-for=@Model.Password />
+    <div class="mb-3">
+        <label>
+            Password:
+        </label>
+        <span class="text-danger" asp-validation-for=@Model.Password></span>
+        <input type="password" asp-for=@Model.Password class=form-control />
     </div>
 
     <br />
 
-    <div>
-        <label>Telefon Numarasi Giriniz</label>
-        <input type="number" asp-for=@Model.PhoneNumber />
+    <div class="mb-3">
+        <label>
+            Phone Number:
+        </label>
+        <span class="text-danger" asp-validation-for=@Model.PhoneNumber></span>
+        <input type="number" asp-for=@Model.PhoneNumber class=form-control />
     </div>
 
     <br />
@@ -36,4 +48,9 @@
             Save
         </button>
     </div>
+
+    <div>
+        @ViewBag.ErrorMessage
+    </div>
+
 </form>

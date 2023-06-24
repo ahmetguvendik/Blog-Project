@@ -3,16 +3,22 @@
 
 <form asp-action="SignIn" asp-controller="User" method="post">
 
-    <div class="col-md-4">
-        <label>Kullanici Adi Giriniz</label>
-        <input type="text" asp-for=@Model.Username />
+    <div class="mb-3">
+        <label>
+            UserName
+        </label>
+        <span class="text-danger" asp-validation-for=@Model.Username></span>
+        <input type="text" asp-for=@Model.Username class=form-control />
     </div>
 
     <br />
 
-    <div class="col-md-4">
-        <label>Sifrenizi Giriniz</label>
-        <input type="password" asp-for=@Model.Password />
+    <div class="mb-3">
+        <label>
+            Password
+        </label>
+        <span class="text-danger" asp-validation-for=@Model.Password></span>
+        <input type="password" asp-for=@Model.Password class=form-control />
     </div>
 
     <br />
@@ -27,6 +33,10 @@
 
     <div class="col-md-4">
         <a asp-action="ResetPasswordForEmail" asp-controller="User">Reset Password</a>
+    </div>
+
+    <div>
+        @ViewBag.ErrorMessage
     </div>
 
 </form>

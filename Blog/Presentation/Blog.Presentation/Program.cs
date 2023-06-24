@@ -18,6 +18,9 @@ using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
+using FluentValidation;
+using Blog.Application.ViewModels.User;
+using Blog.Application.Validations.User;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,37 +29,23 @@ builder.Services.AddControllers(x => x.Filters.Add<BlogController>());
 builder.Services.AddControllersWithViews();
 builder.Services.AddPersistanceService();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Blog.Application.ServiceRegistration).GetTypeInfo().Assembly));
-
-
+builder.Services.AddApplicationService();
 builder.Services.AddCors();
 
-builder.Services.AddAuthentication(opt => {
-    //opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    //opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    //opt.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(opt =>
-{
-    opt.SaveToken = true;
-    opt.TokenValidationParameters = new()
-    {
-        ValidateAudience = true,
-        ValidateIssuer = true,
-        ValidateLifetime = true,
-        ValidateIssuerSigningKey = true,
-        ClockSkew = TimeSpan.Zero,
 
-        ValidAudience = builder.Configuration["Token:Audience"],
-        ValidIssuer = builder.Configuration["Token:Issuer"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Token:Key"])),
-        LifetimeValidator = (notBefore, expires, securityToken, validationParameters) => expires != null ? expires > DateTime.Now : false,
-        NameClaimType = ClaimTypes.Name
-    };
+
+
+builder.Services.ConfigureApplicationCookie(opt =>
+{
+    opt.Cookie.HttpOnly = true;
+    opt.Cookie.Name = "BlogCoolie";
+    opt.AccessDeniedPath = new PathString("/Home/AccesDenided");
 });
 
 builder.Services.Configure<DataProtectionTokenProviderOptions>(opt => opt.TokenLifespan = TimeSpan.FromMinutes(15));  
 Logger log = new LoggerConfiguration()
 //    .WriteTo.Console()
-    .WriteTo.File("logs/log.txt")
+ //   .WriteTo.File("logs/log.txt")
     .WriteTo.PostgreSQL(builder.Configuration["ConnectionStrings:Local"], "Logs", needAutoCreateTable: true, columnOptions: new Dictionary<string, ColumnWriterBase>
     {
         {"message",new RenderedMessageColumnWriter() },

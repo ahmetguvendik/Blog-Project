@@ -4,6 +4,14 @@
 
 <div class="text-center">
     <h1 class="display-4">Hoş Geldıniz</h1>
-    <p>Ahmet Güvendiğin Blog Sayfası İçin Lütfen Önce Giriş Yapınız</p>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <p>Ahmet Güvendiğin Blog Sayfası Seni Bekliyor...</p>
+    }
+    else
+    {
+        <p>Ahmet Güvendiğin Blog Sayfası İçin Lütfen Önce Giriş Yapınız</p>
+    }
+
 </div>
 

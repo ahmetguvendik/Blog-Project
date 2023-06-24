@@ -73,3 +73,14 @@
 /Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Presentation/Blog.Presentation/bin/Debug/net7.0/BouncyCastle.Cryptography.dll
 /Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Presentation/Blog.Presentation/bin/Debug/net7.0/MailKit.dll
 /Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Presentation/Blog.Presentation/bin/Debug/net7.0/MimeKit.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Presentation/Blog.Presentation/bin/Debug/net7.0/FluentValidation.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Presentation/Blog.Presentation/bin/Debug/net7.0/FluentValidation.AspNetCore.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Presentation/Blog.Presentation/bin/Debug/net7.0/FluentValidation.DependencyInjectionExtensions.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Presentation/Blog.Presentation/bin/Debug/net7.0/System.Security.Cryptography.Pkcs.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Presentation/Blog.Presentation/bin/Debug/net7.0/runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Presentation/Blog.Presentation/obj/Debug/net7.0/Blog.Presentation.MvcApplicationPartsAssemblyInfo.cs
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Presentation/Blog.Presentation/bin/Debug/net7.0/NETCore.MailKit.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Presentation/Blog.Presentation/bin/Debug/net7.0/Newtonsoft.Json.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Presentation/Blog.Presentation/bin/Debug/net7.0/SendGrid.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Presentation/Blog.Presentation/bin/Debug/net7.0/SendGrid.Extensions.DependencyInjection.dll
+/Users/ahmetguvendik/Desktop/Projeler/Asp.NetCore/Blog/Presentation/Blog.Presentation/bin/Debug/net7.0/StarkbankEcdsa.dll
