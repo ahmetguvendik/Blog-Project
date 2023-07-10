@@ -1,4 +1,7 @@
 # Blog-Project
+
+Admin ve Member olmak üzere 2 farklı UI tasarımı vardır. Admin kısmında Blog ekleme silme güncelleme işlemleri yapılıyorken member kısımda sadece blog görüntüleme işlemi yapılmaktadır.
+
 ![Ekran Resmi 2023-07-09 19 50 42](https://github.com/ahmetguvendik/Blog-Project/assets/62288196/df072cc5-c030-4221-9b0f-8ae1df617d2d)
 ![Ekran Resmi 2023-07-09 19 50 45](https://github.com/ahmetguvendik/Blog-Project/assets/62288196/9eb6c200-cc56-4aec-9e53-8de8cecf1b06)
 ![Ekran Resmi 2023-07-09 19 50 48](https://github.com/ahmetguvendik/Blog-Project/assets/62288196/29aecedf-e55c-4f26-9f9f-1a2c7740ee2a)
