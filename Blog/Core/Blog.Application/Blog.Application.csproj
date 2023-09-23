@@ -22,6 +22,8 @@
     <None Remove="CQRS\Commands\Blog\CreateBlog\" />
     <None Remove="CQRS\Commands\Blog\UpdateBlog\" />
     <None Remove="CQRS\Commands\Blog\RemoveBlog\" />
+    <None Remove="CQRS\Queries\Blog\" />
+    <None Remove="CQRS\Queries\Blog\GetAllBlog\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Repositories\" />
@@ -39,6 +41,8 @@
     <Folder Include="CQRS\Commands\Blog\CreateBlog\" />
     <Folder Include="CQRS\Commands\Blog\UpdateBlog\" />
     <Folder Include="CQRS\Commands\Blog\RemoveBlog\" />
+    <Folder Include="CQRS\Queries\Blog\" />
+    <Folder Include="CQRS\Queries\Blog\GetAllBlog\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.7" />

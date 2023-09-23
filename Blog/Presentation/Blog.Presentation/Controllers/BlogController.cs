@@ -1,6 +1,7 @@
 ﻿using Blog.Application.CQRS.Commands.Blog.CreateBlog;
 using Blog.Application.CQRS.Commands.Blog.RemoveBlog;
 using Blog.Application.CQRS.Commands.Blog.UpdateBlog;
+using Blog.Application.CQRS.Queries.Blog.GetAllBlog;
 using Blog.Application.Repositories;
 using Blog.Application.ViewModels.Blog;
 using MediatR;
@@ -22,10 +23,10 @@ namespace Blog.Presentation.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetBlog()
+        public async Task<IActionResult> GetBlog(GetAllBlogQueryRequest model)
         {
-           var blogs = _readRepository.GetAll();
-           return View(blogs);
+            var response =  await _mediator.Send(model);
+           return View(response);
         }
 
         public IActionResult CreateBlog()
