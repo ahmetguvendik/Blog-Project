@@ -15,6 +15,13 @@
     <None Remove="ViewModels\User\" />
     <None Remove="Validations\" />
     <None Remove="Validations\User\" />
+    <None Remove="CQRS\" />
+    <None Remove="CQRS\Commands\" />
+    <None Remove="CQRS\Queries\" />
+    <None Remove="CQRS\Commands\Blog\" />
+    <None Remove="CQRS\Commands\Blog\CreateBlog\" />
+    <None Remove="CQRS\Commands\Blog\UpdateBlog\" />
+    <None Remove="CQRS\Commands\Blog\RemoveBlog\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Repositories\" />
@@ -25,6 +32,13 @@
     <Folder Include="ViewModels\User\" />
     <Folder Include="Validations\" />
     <Folder Include="Validations\User\" />
+    <Folder Include="CQRS\" />
+    <Folder Include="CQRS\Commands\" />
+    <Folder Include="CQRS\Queries\" />
+    <Folder Include="CQRS\Commands\Blog\" />
+    <Folder Include="CQRS\Commands\Blog\CreateBlog\" />
+    <Folder Include="CQRS\Commands\Blog\UpdateBlog\" />
+    <Folder Include="CQRS\Commands\Blog\RemoveBlog\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.7" />

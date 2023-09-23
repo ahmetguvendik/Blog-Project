@@ -1,5 +1,9 @@
-﻿using Blog.Application.Repositories;
+﻿using Blog.Application.CQRS.Commands.Blog.CreateBlog;
+using Blog.Application.CQRS.Commands.Blog.RemoveBlog;
+using Blog.Application.CQRS.Commands.Blog.UpdateBlog;
+using Blog.Application.Repositories;
 using Blog.Application.ViewModels.Blog;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,12 +13,12 @@ namespace Blog.Presentation.Controllers
     [Authorize(Roles ="Admin")]
     public class BlogController : Controller
     {
-        private readonly IBlogWriteRepository _writeRepository;
         private readonly IBlogReadRepository _readRepository;
-        public BlogController(IBlogWriteRepository writeRepository, IBlogReadRepository readRepository)
+        private readonly IMediator _mediator;
+        public BlogController(IBlogReadRepository readRepository,IMediator mediator)
         {
             _readRepository = readRepository;
-            _writeRepository = writeRepository;
+            _mediator = mediator;
         }
 
         [HttpGet]
@@ -30,16 +34,10 @@ namespace Blog.Presentation.Controllers
         }
           
         [HttpPost]
-         public async Task<IActionResult> CreateBlog(VM_Blog_Create model)
+         public async Task<IActionResult> CreateBlog(CreateBlogCommandRequest model)
         {
-            var blog = new Domain.Entities.Blog();
-            blog.Id = Guid.NewGuid().ToString();
-            blog.Title = model.Title;
-            blog.Description = model.Description;
-            blog.CreatedTime = DateTime.UtcNow;
-            await _writeRepository.AddBlogAsync(blog);
-            await _writeRepository.SaveAsync();
-            return View();
+            var response = await _mediator.Send(model);
+            return View(response);
         }
 
        
@@ -58,21 +56,16 @@ namespace Blog.Presentation.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateBlog(VM_Blog_Update model)
+        public async Task<IActionResult> UpdateBlog(UpdateBlogCommandRequest model)
         {
-            var blog = await _readRepository.GetById(model.Id);
-            blog.Title = model.Title;
-            blog.Description = model.Description;
-            blog.UpdatedTime = DateTime.UtcNow;
-            await _writeRepository.SaveAsync();
+            await _mediator.Send(model);
             return RedirectToAction("GetBlog", "Blog");
         }
 
        
-        public async Task<IActionResult> RemoveBlog(string id)
+        public async Task<IActionResult> RemoveBlog(RemoveBlogCommandRequest model)
         {
-            await _writeRepository.RemoveAsync(id);
-            await _writeRepository.SaveAsync();
+            await _mediator.Send(model);
             return RedirectToAction("GetBlog", "Blog");
 
         }

@@ -1,6 +1,5 @@
-﻿@using Blog.Application.ViewModels.Blog
-@model VM_Blog_Create
-
+﻿@using Blog.Application.CQRS.Commands.Blog.CreateBlog
+@model CreateBlogCommandResponse
     <div class="col-6">
         <h4>Ekleme İşlemi</h4>
         <form asp-action="CreateBlog" asp-controller="Blog" method="post">
