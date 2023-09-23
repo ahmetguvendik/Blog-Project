@@ -1,41 +1,70 @@
 ﻿<Properties StartupConfiguration="{BBA0D003-79DA-4ED8-843B-16A1858A4F09}|https">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Presentation.Blog.Presentation PreferredExecutionTarget="/Applications/Brave Browser.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Presentation/Blog.Presentation/Controllers/BlogController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Presentation/Blog.Presentation/Controllers/UserController.cs">
     <Files>
-      <File FileName="Presentation/Blog.Presentation/Controllers/UserController.cs" Line="1" Column="1" />
-      <File FileName="Infrastructure/Blog.Persistance/Services/EmailService.cs" Line="9" Column="2" />
-      <File FileName="Presentation/Blog.Presentation/Controllers/BlogController.cs" Line="18" Column="31" />
-      <File FileName="Presentation/Blog.Presentation/Controllers/MemberBlogController.cs" Line="1" Column="1" />
-      <File FileName="Core/Blog.Application/CQRS/Commands/Blog/CreateBlog/CreateBlogCommandRequest.cs" Line="8" Column="1" />
-      <File FileName="Core/Blog.Application/CQRS/Commands/Blog/CreateBlog/CreateBlogCommandResponse.cs" Line="7" Column="48" />
-      <File FileName="Core/Blog.Application/CQRS/Commands/Blog/CreateBlog/CreateBlogCommandHandler.cs" Line="7" Column="82" />
-      <File FileName="Presentation/Blog.Presentation/Views/Blog/CreateBlog.cshtml" Line="4" Column="31" />
-      <File FileName="Core/Blog.Application/CQRS/Commands/Blog/RemoveBlog/RemoveBlogCommandRequest.cs" Line="8" Column="16" />
-      <File FileName="Core/Blog.Application/CQRS/Commands/Blog/RemoveBlog/RemoveBlogCommandResponse.cs" Line="1" Column="1" />
-      <File FileName="Core/Blog.Application/CQRS/Commands/Blog/RemoveBlog/RemoveBlogCommandHandler.cs" Line="7" Column="82" />
-      <File FileName="Core/Blog.Application/CQRS/Commands/Blog/UpdateBlog/UpdateBlogCommandRequest.cs" Line="6" Column="39" />
-      <File FileName="Core/Blog.Application/CQRS/Commands/Blog/UpdateBlog/UpdateBlogCommandResponse.cs" Line="7" Column="42" />
-      <File FileName="Core/Blog.Application/CQRS/Commands/Blog/UpdateBlog/UpdateBlogCommandHandler.cs" Line="28" Column="15" />
+      <File FileName="Presentation/Blog.Presentation/Controllers/UserController.cs" Line="133" Column="14" />
+      <File FileName="Infrastructure/Blog.Persistance/Services/EmailService.cs" />
+      <File FileName="Presentation/Blog.Presentation/Controllers/BlogController.cs" Line="53" Column="35" />
+      <File FileName="Presentation/Blog.Presentation/Controllers/MemberBlogController.cs" Line="3" Column="1" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/Blog/CreateBlog/CreateBlogCommandRequest.cs" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/Blog/CreateBlog/CreateBlogCommandResponse.cs" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/Blog/CreateBlog/CreateBlogCommandHandler.cs" />
+      <File FileName="Presentation/Blog.Presentation/Views/Blog/CreateBlog.cshtml" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/Blog/RemoveBlog/RemoveBlogCommandRequest.cs" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/Blog/RemoveBlog/RemoveBlogCommandResponse.cs" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/Blog/RemoveBlog/RemoveBlogCommandHandler.cs" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/Blog/UpdateBlog/UpdateBlogCommandRequest.cs" Line="1" Column="1" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/Blog/UpdateBlog/UpdateBlogCommandResponse.cs" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/Blog/UpdateBlog/UpdateBlogCommandHandler.cs" Line="1" Column="1" />
+      <File FileName="Core/Blog.Application/CQRS/Queries/Blog/GetAllBlog/GetAllBlogQueryRequest.cs" Line="8" Column="3" />
+      <File FileName="Core/Blog.Application/CQRS/Queries/Blog/GetAllBlog/GetAllBlogQueryHandler.cs" Line="15" Column="22" />
+      <File FileName="Core/Blog.Application/Blog.Application.csproj" Line="72" Column="95" />
+      <File FileName="Presentation/Blog.Presentation/Blog.Presentation.csproj" Line="27" Column="93" />
+      <File FileName="Presentation/Blog.Presentation/Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="Core/Blog.Application/CQRS/Queries/Blog/UpdateGetByIdBlog/UpdateGetbyIdBlogQueryRequest.cs" Line="7" Column="44" />
+      <File FileName="Core/Blog.Application/CQRS/Queries/Blog/UpdateGetByIdBlog/UpdateGetByIdBlogQueryHandler.cs" Line="13" Column="54" />
+      <File FileName="Core/Blog.Application/CQRS/Queries/Blog/GetByIdBlog/GetByIdBlogQueryRequest.cs" Line="8" Column="34" />
+      <File FileName="Core/Blog.Application/CQRS/Queries/Blog/GetByIdBlog/GetByIdBlogQueryHandler.cs" Line="21" Column="2" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/User/CreateUser/CreateUserCommandRequest.cs" Line="6" Column="39" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/User/CreateUser/CreateUserCommandResponse.cs" Line="9" Column="45" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/User/CreateUser/CreateUserCommandHandler.cs" Line="17" Column="40" />
+      <File FileName="Core/Blog.Application/Validations/User/CreateUserValidation.cs" Line="17" Column="6" />
+      <File FileName="Core/Blog.Application/Validations/User/ResetPasswordValidation.cs" Line="20" Column="1" />
+      <File FileName="Core/Blog.Application/ServiceRegistration.cs" Line="19" Column="75" />
+      <File FileName="Presentation/Blog.Presentation/Program.cs" Line="64" Column="1" />
+      <File FileName="Presentation/Blog.Presentation/logs/log.txt" Line="1" Column="1" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/User/LoginUser/LoginUserCommandRequest.cs" Line="8" Column="1" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/User/LoginUser/LoginUserCommandResponse.cs" Line="8" Column="27" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/User/LoginUser/LoginUserCommandHandler.cs" Line="48" Column="14" />
+      <File FileName="Core/Blog.Application/Validations/User/SignInValidation.cs" Line="8" Column="75" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/User/ResetPassword/ResetPasswordCommandRequest.cs" Line="9" Column="1" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/User/ResetPassword/ResetPasswordCommandResponse.cs" Line="18" Column="1" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/User/ResetPassword/ResetPasswordCommandHandler.cs" Line="33" Column="1" />
+      <File FileName="Core/Blog.Application/ViewModels/User/ResetPassword.cs" Line="9" Column="1" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/User/SignOutUser/SignOutUserCommandRequest.cs" Line="8" Column="3" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/User/SignOutUser/SignOutUserCommandHandler.cs" Line="19" Column="53" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/User/SignOutUser/SignOutUserCommandResponse.cs" Line="1" Column="1" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/User/ResetPasswordEmail/ResetPasswordEmailCommandRequest.cs" Line="8" Column="2" />
+      <File FileName="Core/Blog.Application/CQRS/Commands/User/ResetPasswordEmail/ResetPasswordEmailCommandHandler.cs" Line="39" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Blog" expanded="True" selected="True">
+          <Node name="Blog" expanded="True">
             <Node name="Core" expanded="True">
               <Node name="Blog.Application" expanded="True">
                 <Node name="CQRS" expanded="True">
                   <Node name="Commands" expanded="True">
-                    <Node name="Blog" expanded="True">
-                      <Node name="CreateBlog" expanded="True" />
-                      <Node name="RemoveBlog" expanded="True" />
-                      <Node name="UpdateBlog" expanded="True" />
-                    </Node>
+                    <Node name="User" expanded="True" />
                   </Node>
+                  <Node name="Queries" expanded="True" />
+                </Node>
+                <Node name="Validations" expanded="True" />
+                <Node name="ViewModels" expanded="True">
+                  <Node name="User" expanded="True" />
                 </Node>
               </Node>
             </Node>
@@ -46,7 +75,10 @@
             </Node>
             <Node name="Presentation" expanded="True">
               <Node name="Blog.Presentation" expanded="True">
-                <Node name="Controllers" expanded="True" />
+                <Node name="Controllers" expanded="True">
+                  <Node name="UserController.cs" selected="True" />
+                </Node>
+                <Node name="logs" expanded="True" />
                 <Node name="Views" expanded="True">
                   <Node name="Blog" expanded="True" />
                   <Node name="Home" expanded="True" />
@@ -58,5 +90,7 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Presentation.Blog.Presentation PreferredExecutionTarget="/Applications/Brave Browser.app" />
+  <MultiItemStartupConfigurations />
 </Properties>

@@ -1,4 +1,7 @@
 ﻿using System;
+using Blog.Application.CQRS.Commands.User.CreateUser;
+using Blog.Application.CQRS.Commands.User.LoginUser;
+using Blog.Application.CQRS.Commands.User.ResetPassword;
 using Blog.Application.Repositories;
 using Blog.Application.Validations.User;
 using Blog.Application.ViewModels.User;
@@ -11,9 +14,9 @@ namespace Blog.Application
     {
         public static void AddApplicationService(this IServiceCollection collection)
         {
-            collection.AddTransient<IValidator<VM_User_Create>, CreateUserValidation>();
-            collection.AddTransient<IValidator<VM_User_SignIn>, SignInValidation>();
-            collection.AddTransient<IValidator<ResetPassword>, ResetPasswordValidation>();
+            collection.AddTransient<IValidator<CreateUserCommandRequest>, CreateUserValidation>();
+            collection.AddTransient<IValidator<LoginUserCommandRequest>, SignInValidation>();
+            collection.AddTransient<IValidator<ResetPasswordCommandRequest>, ResetPasswordValidation>();
         }
     }
 }

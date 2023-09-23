@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Blog.Application.Repositories;
+﻿using Blog.Application.CQRS.Queries.Blog.GetAllBlog;
+using Blog.Application.CQRS.Queries.Blog.GetByIdBlog;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,21 +10,21 @@ namespace Blog.Presentation.Controllers
     [Authorize(Roles ="Admin,Member")]
     public class MemberBlogController : Controller
     {
-        private readonly IBlogReadRepository _readRepository;
-        public MemberBlogController(IBlogReadRepository readRepository)
+        private readonly IMediator _mediator;
+        public MemberBlogController(IMediator mediator)
         {
-            _readRepository = readRepository;
+            _mediator = mediator;
         }
-        public IActionResult GetBlogTitle()
+        public async Task<IActionResult> GetBlogTitle(GetAllBlogQueryRequest model)
         {
 
-            var blogs = _readRepository.GetAll();
+            var blogs = await _mediator.Send(model);
             return View(blogs);
         }
 
-        public async Task<IActionResult> DetailBlog(string id)
+        public async Task<IActionResult> DetailBlog(GetByIdBlogQueryRequest model)
         {
-            var blog = await _readRepository.GetById(id);
+            var blog = await _mediator.Send(model);
             return View(blog);
         }
     }

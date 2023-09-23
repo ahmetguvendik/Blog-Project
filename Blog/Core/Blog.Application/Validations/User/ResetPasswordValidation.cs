@@ -1,10 +1,11 @@
 ﻿using System;
+using Blog.Application.CQRS.Commands.User.ResetPassword;
 using Blog.Application.ViewModels.User;
 using FluentValidation;
 
 namespace Blog.Application.Validations.User
 {
-	public class ResetPasswordValidation : AbstractValidator<ResetPassword>
+	public class ResetPasswordValidation : AbstractValidator<ResetPasswordCommandRequest>
     {
 	
 		public ResetPasswordValidation()

@@ -1,10 +1,11 @@
 ﻿using System;
+using Blog.Application.CQRS.Commands.User.LoginUser;
 using Blog.Application.ViewModels.User;
 using FluentValidation;
 
 namespace Blog.Application.Validations.User
 {
-	public class SignInValidation : AbstractValidator<VM_User_SignIn>
+	public class SignInValidation : AbstractValidator<LoginUserCommandRequest>
 	{
 		public SignInValidation()
 		{

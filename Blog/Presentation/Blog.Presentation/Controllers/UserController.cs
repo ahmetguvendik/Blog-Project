@@ -1,7 +1,12 @@
-﻿using Blog.Application.Services;
+﻿using Blog.Application.CQRS.Commands.User.CreateUser;
+using Blog.Application.CQRS.Commands.User.LoginUser;
+using Blog.Application.CQRS.Commands.User.ResetPassword;
+using Blog.Application.CQRS.Commands.User.SignOutUser;
+using Blog.Application.Services;
 using Blog.Application.ViewModels.User;
 using Blog.Domain.Entities;
 using FluentValidation;
+using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,22 +15,23 @@ namespace Blog.Presentation.Controllers
     public class UserController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
-        private readonly SignInManager<AppUser> _signInManager;
         private readonly RoleManager<AppRole> _roleManager;
-        private readonly IValidator<VM_User_Create> _userValidator;
-        private readonly IValidator<VM_User_SignIn> _singInUserValidator;
-        private readonly IValidator<ResetPassword> _resetPasswordValidator;
+        private readonly IValidator<CreateUserCommandRequest> _userValidator;
+        private readonly IValidator<LoginUserCommandRequest> _singInUserValidator;
+        private readonly IValidator<ResetPasswordCommandRequest> _resetPasswordValidator;
         private readonly IEmailService _emailService;
+        private readonly IMediator _mediator;
 
-        public UserController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager,RoleManager<AppRole> roleManager, IValidator<VM_User_Create> userValidator, IValidator<VM_User_SignIn> singInUserValidator, IEmailService emailService, IValidator<ResetPassword> resetPasswordValidator)
+        public UserController(UserManager<AppUser> userManager,RoleManager<AppRole> roleManager, IValidator<CreateUserCommandRequest> userValidator, IValidator<LoginUserCommandRequest> singInUserValidator, IEmailService emailService, IValidator<ResetPasswordCommandRequest> resetPasswordValidator,IMediator mediator)
         {
-            _signInManager = signInManager;
+    
             _userManager = userManager;
             _roleManager = roleManager;
             _userValidator = userValidator;
             _singInUserValidator = singInUserValidator;
             _emailService = emailService;
             _resetPasswordValidator = resetPasswordValidator;
+            _mediator = mediator;
        
         }
         public IActionResult CreateUser()
@@ -34,33 +40,13 @@ namespace Blog.Presentation.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateUser(VM_User_Create model )
+        public async Task<IActionResult> CreateUser(CreateUserCommandRequest model )
         {
-            var appUser = new AppUser();
-            appUser.Id = Guid.NewGuid().ToString();
-            appUser.Email = model.Email;
-            appUser.UserName = model.UserName;
-            appUser.PhoneNumber = model.PhoneNumber;
-
             try
             {
                 _userValidator.ValidateAndThrow(model);
-                var response = await _userManager.CreateAsync(appUser, model.Password);
-                if (response.Succeeded)
-                {
-                    var role = await _roleManager.FindByNameAsync("Member");
-                    if (role == null)
-                    {
-                        var appRole = new AppRole()
-                        {
-                            Id = Guid.NewGuid().ToString(),
-                            Name = "Member"
-                        };
-                        await _roleManager.CreateAsync(appRole);
-                    }
-
-                    await _userManager.AddToRoleAsync(appUser, "Member");
-                }
+                await _mediator.Send(model);
+             
             }
             catch(Exception ex)
             {
@@ -76,32 +62,24 @@ namespace Blog.Presentation.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult>SignIn(VM_User_SignIn model)
+        public async Task<IActionResult>SignIn(LoginUserCommandRequest model)
         {
             try
             {
                 _singInUserValidator.ValidateAndThrow(model);
                 if (ModelState.IsValid)
                 {
-                    var appUser = await _userManager.FindByNameAsync(model.Username);
-
-                    var response = await _signInManager.PasswordSignInAsync(model.Username, model.Password, false, false);
-
-                    if (response.Succeeded)
+                   var response =  await _mediator.Send(model);
+                    if(response.Role == "Member")
                     {
-                        var role = await _userManager.GetRolesAsync(appUser);
-                        //   var userId = await _userManager.FindByIdAsync(appUser.Id.ToString());
-                        if (role.Contains("Member"))
-                        {
-                            return RedirectToAction("GetBlogTitle", "MemberBlog");
-                        }
-                        else if (role.Contains("Admin"))
-                        {
-                            return RedirectToAction("GetBlog", "Blog");
-                        }
-                        //   var user = await _userManager.FindByNameAsync(model.Username);
-
+                        return RedirectToAction("GetBlogTitle", "MemberBlog");
                     }
+
+                    else if(response.Role == "Admin")
+                    {
+                        return RedirectToAction("GetBlog", "Blog");
+                    }
+
                 }
             }
             catch(Exception ex)
@@ -112,9 +90,9 @@ namespace Blog.Presentation.Controllers
             return View();
         }
 
-        public async Task<IActionResult> SignOut()
+        public async Task<IActionResult> SignOut(SignOutUserCommandRequest model)
         {
-            await _signInManager.SignOutAsync();
+            await _mediator.Send(model);
             return RedirectToAction("SignIn", "User");
         }
 
@@ -125,21 +103,12 @@ namespace Blog.Presentation.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> ResetPassword(ResetPassword resetPassword)
+        public async Task<IActionResult> ResetPassword(ResetPasswordCommandRequest resetPassword)
         {
             try
             {
                 _resetPasswordValidator.ValidateAndThrow(resetPassword);
-                var user = await _userManager.FindByEmailAsync(resetPassword.Email);
-                if (user != null)
-                {
-                    var resetResult = await _userManager.ResetPasswordAsync(user, resetPassword.Token, resetPassword.Password);
-                    if (resetResult.Succeeded)
-                    {
-                        return RedirectToAction("SignIn", "User");
-                    }
-
-                }
+                await _mediator.Send(resetPassword);
             }
             catch(Exception ex)
             {
@@ -162,7 +131,6 @@ namespace Blog.Presentation.Controllers
         {
             try
             {
-               // _resetPasswordValidator.ValidateAndThrow(resetPassword);
                 var user = await _userManager.FindByEmailAsync(resetPassword.Email);
                 if (user != null)
                 {

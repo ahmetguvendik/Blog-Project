@@ -2,6 +2,8 @@
 using Blog.Application.CQRS.Commands.Blog.RemoveBlog;
 using Blog.Application.CQRS.Commands.Blog.UpdateBlog;
 using Blog.Application.CQRS.Queries.Blog.GetAllBlog;
+using Blog.Application.CQRS.Queries.Blog.GetByIdBlog;
+using Blog.Application.CQRS.Queries.Blog.UpdateGetByIdBlog;
 using Blog.Application.Repositories;
 using Blog.Application.ViewModels.Blog;
 using MediatR;
@@ -14,11 +16,9 @@ namespace Blog.Presentation.Controllers
     [Authorize(Roles ="Admin")]
     public class BlogController : Controller
     {
-        private readonly IBlogReadRepository _readRepository;
         private readonly IMediator _mediator;
-        public BlogController(IBlogReadRepository readRepository,IMediator mediator)
+        public BlogController(IMediator mediator)
         {
-            _readRepository = readRepository;
             _mediator = mediator;
         }
 
@@ -42,18 +42,15 @@ namespace Blog.Presentation.Controllers
         }
 
        
-        public async Task<IActionResult> UpdateBlog(string id)
+        public async Task<IActionResult> UpdateBlog(UpdateGetbyIdBlogQueryRequest model)
         {
-            if(id == null)
+            if(model.Id == null)
             {
                 return RedirectToAction("GetBlog", "Blog");
             }
 
-            var blog = await _readRepository.GetById(id);
-            VM_Blog_Update blogMapper = new VM_Blog_Update();
-            blogMapper.Title = blog.Title;
-            blogMapper.Description = blog.Description;
-            return View(blogMapper);
+            var response =  await _mediator.Send(model);
+            return View(response);
         }
 
         [HttpPost]
